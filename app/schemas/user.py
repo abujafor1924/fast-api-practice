@@ -14,6 +14,7 @@ class UserResponse(BaseModel):
     id: int
     username: str
     email: str
+    role: str
 
     model_config = ConfigDict(
         from_attributes=True
@@ -21,3 +22,15 @@ class UserResponse(BaseModel):
     
     
 
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+    
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
+    
+class RefreshTokenResponse(BaseModel):
+    refresh_token: str
+    token_type: str
